@@ -1,0 +1,9 @@
+{
+  "status": "membuka",
+  "mode": "manual",
+  "jadwal": {
+    "buka": "06:30",
+    "tutup": "18:00"
+  },
+  "last_action": "right"
+}
