@@ -2,8 +2,8 @@
   "status": "membuka",
   "mode": "manual",
   "jadwal": {
-    "buka": "06:30",
-    "tutup": "18:00"
+    "buka": "09:30",
+    "tutup": "23:00"
   },
   "last_action": "right"
 }

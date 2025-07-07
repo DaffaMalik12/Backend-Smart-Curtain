@@ -67,3 +67,22 @@ exports.resetToAuto = (req, res) => {
     res.status(500).json({ error: "Gagal reset ke mode otomatis." });
   }
 };
+
+// Di controller Express.js
+exports.updateSchedule = (req, res) => {
+  try {
+    const { buka, tutup } = req.body;
+    const status = readStatus();
+    status.jadwal.buka = buka;
+    status.jadwal.tutup = tutup;
+    writeStatus(status);
+
+    const io = req.io;
+    if (io) io.emit("status-update", status);
+
+    res.json({ message: "Jadwal diperbarui.", status });
+  } catch (error) {
+    res.status(500).json({ error: "Gagal update jadwal." });
+  }
+};
+
